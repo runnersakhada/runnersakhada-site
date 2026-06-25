@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Runner's Akhada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #ff5722;
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: #ff5722;
+      color: #fff !important;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+    }
+
+    /* Coach Section */
+    .coach-section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .coach-info h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ff5722;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .coach-info .title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .coach-roles {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .coach-roles li {
+      padding: 6px 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .coach-roles li strong {
+      color: #1a1a1a;
+    }
+
+    .contact-details {
+      margin-bottom: 32px;
+    }
+
+    .contact-details p {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-details a {
+      color: #ff5722;
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #f8f9fa;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .social-links a:hover {
+      background: #eee;
+      transform: translateY(-2px);
+    }
+
+    .coach-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #ff5722;
+      padding: 20px 20px 0;
+      margin: 0 auto;
+    }
+
+    .coach-image img {
+      width: 100%;
+      display: block;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .coach-image .placeholder {
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid #eee;
+      margin-top: 80px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      .coach-section {
+        grid-template-columns: 1fr;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+      .coach-info h1 { font-size: 2rem; }
+      .social-links { flex-wrap: wrap; }
+      .coach-image { order: -1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Runner's Akhada</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="form.html" class="nav-cta">Join Now</a>
+    </div>
+  </nav>
+
+  <!-- Coach Section -->
+  <section class="coach-section">
+    <div class="coach-info">
+      <h1>Coach Swapnesh</h1>
+      <p class="title">Founder | thehsrexpress</p>
+
+      <ul class="coach-roles">
+        <li><strong>Running Coach</strong></li>
+        <li>Bengaluru Head Coach <strong>@nbrc_india</strong></li>
+        <li>Online Coach <strong>@milesmusclesandmind</strong></li>
+        <li>Offline Coach <strong>RunnersAkhada</strong></li>
+      </ul>
+
+      <div class="contact-details">
+        <p>Email: <a href="mailto:runnersakhada@gmail.com">runnersakhada@gmail.com</a></p>
+        <p>Tel: <a href="tel:+919590849328">+91 9590849328</a></p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://instagram.com/milesmusclesandmind" target="_blank">&#128247; Instagram</a>
+        <a href="https://youtube.com/@milesmusclesandmind" target="_blank">&#9654; YouTube</a>
+        <a href="https://www.strava.com/" target="_blank">&#9978; Strava</a>
+      </div>
+    </div>
+
+    <div class="coach-image">
+      <div class="placeholder">Add coach photo here<br>(coach.jpg)</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Runner's Akhada by Coach Swapnesh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

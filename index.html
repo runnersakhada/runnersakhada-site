@@ -1,14 +1,324 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Runner's Akhada - Registration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runner's Akhada — Train with Purpose</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body, html { margin: 0; height: 100%; overflow: hidden; }
-    iframe { width: 100%; height: 100%; border: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: #fff;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%),
+                  url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #ff5722;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .features .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .feature-card {
+      padding: 32px;
+      border-radius: 16px;
+      background: #f8f9fa;
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* Stats Section */
+    .stats {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ff5722;
+      margin-bottom: 8px;
+    }
+
+    .stat-item p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff5f2 0%, #fff 100%);
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid #eee;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .logo { font-size: 1.2rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .features { padding: 60px 20px; }
+      .features h2 { font-size: 1.8rem; }
+      .cta-section h2 { font-size: 1.8rem; }
+      .stats { padding: 60px 20px; }
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://runnersakhada.framer.website/form"></iframe>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Runner's Akhada</div>
+    <div style="display:flex; gap:24px; align-items:center;">
+      <a href="index.html" style="color:#fff; text-decoration:none; font-weight:500;">Home</a>
+      <a href="contact.html" style="color:#fff; text-decoration:none; font-weight:500;">Contact</a>
+      <a href="form.html" class="nav-cta">Join Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Run Stronger. Train Smarter.</h1>
+      <p>Personalised coaching by <strong>Coach Swapnesh</strong> for runners of every level — from first-timers to seasoned racers. Build consistency, avoid injuries, and hit your goals.</p>
+      <a href="form.html" class="btn-primary">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Why Train With Us</h2>
+    <p class="subtitle">We bring structure, accountability, and expert guidance to your running journey.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#127939;</div>
+        <h3>Personalised Plans</h3>
+        <p>Training plans tailored to your fitness level, goals, and schedule. No cookie-cutter programs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128170;</div>
+        <h3>Strength & Conditioning</h3>
+        <p>Build a resilient body with targeted strength work designed specifically for runners.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129504;</div>
+        <h3>Expert Coaching</h3>
+        <p>Regular check-ins, form analysis, and guidance from experienced running coaches.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128101;</div>
+        <h3>Community</h3>
+        <p>Train alongside a motivated group. Accountability and camaraderie make the miles easier.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127942;</div>
+        <h3>Race Preparation</h3>
+        <p>Whether it's a 5K or a marathon, we'll get you to the start line confident and ready.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128147;</div>
+        <h3>Injury Prevention</h3>
+        <p>Smart training load management and recovery protocols to keep you running pain-free.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>100+</h3>
+        <p>Runners Coached</p>
+      </div>
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Races Completed</p>
+      </div>
+      <div class="stat-item">
+        <h3>0</h3>
+        <p>One-Size-Fits-All Plans</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Ready to Level Up?</h2>
+    <p>Fill out a quick form and let's build your training plan together.</p>
+    <a href="form.html" class="btn-primary">Sign Up Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Runner's Akhada by Coach Swapnesh. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
