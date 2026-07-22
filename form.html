@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration — Runners Akhada</title>
+<link rel="icon" href="assets/images/logo.jpeg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/images/logo.jpeg" alt="Runners Akhada logo">
+      <span class="brand-text">
+        <span class="name">RUNNERS AKHADA</span>
+        <span class="tagline">Crafting Strength. Elevating Endurance.</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="coach.html">Know Your Coach</a>
+      <a href="community.html">Our Community</a>
+      <a href="training.html">Training Plans</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="form.html" class="nav-cta active">Join Now</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>Help us know more about you</h1>
+  <p>The same registration questions as before — now on a native page.</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="form-card form-card-wide">
+      <div class="form-success"></div>
+      <form data-native-form data-gsheet-url="https://script.google.com/macros/s/AKfycbzxcCKwfyeDinCpSoTi-iZlO2dNE5nc-1zlvCzV_IH9hOPMqoVC7TYwqdkFgnP3YIgGTw/exec">
+        <!-- Honeypot field — hidden from real users, catches basic bots.
+             Left blank by humans; if a bot fills it, the script silently discards the entry. -->
+        <div style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+          <label for="website_url">Leave this field blank</label>
+          <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-section-title">About you</div>
+        <div class="form-row">
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="full_name" required>
+        </div>
+        <div class="form-row-2">
+          <div class="form-row">
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob">
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-row">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-row">
+            <label for="blood-group">Blood group</label>
+            <input type="text" id="blood-group" name="blood_group" placeholder="e.g. O+">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="address">Address</label>
+          <textarea id="address" name="address"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="emergency-contact">Emergency contacts</label>
+          <input type="text" id="emergency-contact" name="emergency_contact" placeholder="Name and phone number">
+        </div>
+
+        <div class="form-section-title">Running background</div>
+        <div class="form-row">
+          <label for="running-since">Running since?</label>
+          <input type="text" id="running-since" name="running_since" placeholder="e.g. 2021, or 'just starting'">
+        </div>
+        <div class="form-row">
+          <label for="race-timings">Previous race timings (all distances with date)</label>
+          <textarea id="race-timings" name="race_timings"></textarea>
+        </div>
+
+        <div class="form-section-title">Goals</div>
+        <div class="form-row">
+          <label for="expectation">Expectation from training</label>
+          <textarea id="expectation" name="expectation"></textarea>
+        </div>
+        <div class="form-row">
+          <label>What are your goals from training</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="goals" value="Improve running performance"> Improve running performance</label>
+            <label><input type="checkbox" name="goals" value="Build consistency"> Build consistency</label>
+            <label><input type="checkbox" name="goals" value="Weight loss"> Weight loss</label>
+            <label><input type="checkbox" name="goals" value="Strength & conditioning"> Strength &amp; conditioning</label>
+            <label><input type="checkbox" name="goals" value="Injury prevention"> Injury prevention</label>
+            <label><input type="checkbox" name="goals" value="Race preparation"> Race preparation</label>
+            <label><input type="checkbox" name="goals" value="Accountability/community"> Accountability/community</label>
+          </div>
+        </div>
+
+        <div class="form-section-title">Health &amp; lifestyle</div>
+        <div class="form-row">
+          <label>Do you currently have any</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="health" value="Past injuries"> Past injuries</label>
+            <label><input type="checkbox" name="health" value="Existing medical conditions"> Existing medical conditions</label>
+            <label><input type="checkbox" name="health" value="Breathing issues/asthma"> Breathing issues/asthma</label>
+            <label><input type="checkbox" name="health" value="Knee pain"> Knee pain</label>
+            <label><input type="checkbox" name="health" value="Back pain"> Back pain</label>
+            <label><input type="checkbox" name="health" value="None"> None</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="health-details">Please share relevant details if any</label>
+          <textarea id="health-details" name="health_details"></textarea>
+        </div>
+        <div class="form-row">
+          <label>Lifestyle habits</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="lifestyle" value="Vegetarian"> Vegetarian</label>
+            <label><input type="checkbox" name="lifestyle" value="Non Vegetarian"> Non Vegetarian</label>
+            <label><input type="checkbox" name="lifestyle" value="Vegan"> Vegan</label>
+            <label><input type="checkbox" name="lifestyle" value="Alcohol occasionally"> Alcohol occasionally</label>
+            <label><input type="checkbox" name="lifestyle" value="Smoker"> Smoker</label>
+            <label><input type="checkbox" name="lifestyle" value="Other"> Other</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="other-activities">Other activities: Gym / Cycling / Yoga / Swim / Trek / other</label>
+          <input type="text" id="other-activities" name="other_activities">
+        </div>
+        <div class="form-row">
+          <label for="hobbies">Hobbies</label>
+          <input type="text" id="hobbies" name="hobbies">
+        </div>
+        <div class="form-row">
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" name="occupation">
+        </div>
+        <div class="form-row">
+          <label for="coach-note">Anything your coach should know?</label>
+          <textarea id="coach-note" name="coach_note"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">Submit</button>
+        <p class="form-note">This form is native HTML and not yet wired to a backend — connect it to Formspree, Netlify Forms, or your own endpoint before going live.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Runners Akhada</div>
+      <div class="footer-tagline">Crafting Strength. Elevating Endurance.</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="coach.html">Know Your Coach</a>
+      <a href="community.html">Our Community</a>
+      <a href="training.html">Training Plans</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <div>Email: runnersakhada@gmail.com</div>
+      <div>Tel: +91 9590849328</div>
+      <div><a href="https://www.instagram.com/thehsrexpress/" target="_blank" rel="noopener">@thehsrexpress</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Runner's Akhada by Coach Swapnesh. All rights reserved.</div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
