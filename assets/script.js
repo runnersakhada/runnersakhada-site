@@ -21,6 +21,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Testimonial carousel (left/right scroll)
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    var prevBtn = carousel.querySelector('.carousel-prev');
+    var nextBtn = carousel.querySelector('.carousel-next');
+    if (!track) return;
+
+    function scrollByCards(direction) {
+      var card = track.querySelector('.testimonial-card');
+      if (!card) return;
+      var cardWidth = card.getBoundingClientRect().width;
+      var gap = 24;
+      track.scrollBy({ left: direction * (cardWidth + gap) * 3, behavior: 'smooth' });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { scrollByCards(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { scrollByCards(1); });
+  });
+
   // Native form handling
   document.querySelectorAll('form[data-native-form]').forEach(function (form) {
     var gsheetUrl = form.getAttribute('data-gsheet-url');

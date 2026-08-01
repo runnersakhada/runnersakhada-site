@@ -4,18 +4,18 @@
    ============================================ */
 
 :root {
-  /* Charcoal-black theme -- orange (from logo) as the sharp accent */
+  /* Deep navy sports theme -- orange (from new logo) as the sharp accent */
   --gold: #e4611a;
   --gold-dark: #b84a12;
-  --charcoal: #35322c;
-  --charcoal-dark: #1c1a17;
-  --surface: #262320;
-  --surface-alt: #201e1a;
+  --charcoal: #1d3350;
+  --charcoal-dark: #0d1826;
+  --surface: #17273d;
+  --surface-alt: #122032;
   --cream: var(--surface-alt);
   --white: var(--surface);
-  --text-main: #f3f0e9;
-  --text-muted: #a79f8f;
-  --border: #3d3930;
+  --text-main: #f0f3f7;
+  --text-muted: #91a1b5;
+  --border: #263c5a;
   --radius: 7px;
   --shadow: 0 8px 28px rgba(0,0,0,0.45);
   --max-width: 1140px;
@@ -130,7 +130,7 @@ ul { list-style: none; }
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
 }
 
 @media (max-width: 860px) {
@@ -228,11 +228,10 @@ ul { list-style: none; }
 .btn-outline:hover { border-color: #fff; }
 
 .btn-dark {
-  background: var(--surface);
-  color: var(--text-main);
-  border: 1.5px solid var(--gold);
+  background: var(--charcoal-dark);
+  color: #fff;
 }
-.btn-dark:hover { background: var(--gold); color: #fff; }
+.btn-dark:hover { background: #1c1c1b; }
 
 /* ---------- Section basics ---------- */
 section { padding: 72px 0; }
@@ -277,16 +276,13 @@ section { padding: 72px 0; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-5 { grid-template-columns: repeat(5, 1fr); }
 
 @media (max-width: 900px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .grid-5 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 620px) {
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .grid-5 { grid-template-columns: repeat(2, 1fr); }
 }
 
 .card {
@@ -323,90 +319,7 @@ section { padding: 72px 0; }
   color: var(--text-muted);
 }
 
-/* ---------- Coach race record cards ---------- */
-.record-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 30px 16px;
-  text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-}
-.record-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-  border-color: var(--gold);
-}
-.record-count {
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.record-distance {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 /* ---------- Stats ---------- */
-/* ---------- Home intro banner (photo + text) ---------- */
-.home-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 44px;
-  align-items: center;
-  margin-bottom: 48px;
-}
-@media (max-width: 800px) {
-  .home-intro-grid { grid-template-columns: 1fr; }
-}
-.home-intro-text h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  font-weight: 800;
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 14px;
-}
-.home-intro-text p {
-  color: var(--text-muted);
-  font-size: 15.5px;
-  max-width: 380px;
-}
-.home-intro-quote {
-  font-style: italic;
-}
-.home-intro-photo {
-  border: 2px dashed var(--border);
-  border-radius: var(--radius);
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 13.5px;
-  text-align: center;
-  padding: 24px;
-  line-height: 1.6;
-  overflow: hidden;
-}
-.home-intro-photo:has(img) {
-  border-style: solid;
-  padding: 0;
-}
-.home-intro-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 320px;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: calc(var(--radius) - 2px);
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -438,11 +351,12 @@ section { padding: 72px 0; }
 }
 .testimonial-card img {
   width: 100%;
-  height: 260px;
-  object-fit: contain;
-  background: var(--surface-alt);
-  display: block;
+  height: 220px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.3s ease;
 }
+.testimonial-card:hover img { filter: grayscale(0%); }
 .testimonial-card .body { padding: 20px; }
 .testimonial-card h4 { font-size: 15px; color: var(--gold); margin-bottom: 8px; }
 .testimonial-card p.quote { font-size: 14px; color: var(--text-muted); font-style: italic; margin-bottom: 14px; }
@@ -509,12 +423,12 @@ section { padding: 72px 0; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-.coach-title { font-size: 1.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+.coach-title { font-size: 1.9rem; font-weight: 700; color: var(--charcoal-dark); margin-bottom: 4px; }
 .coach-sub { color: var(--gold-dark); font-weight: 600; margin-bottom: 18px; }
 .coach-highlight {
   font-size: 17px;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
   border-left: 3px solid var(--gold);
   padding-left: 14px;
   margin: 18px 0;
@@ -529,7 +443,7 @@ section { padding: 72px 0; }
   margin: 18px 0;
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
 }
 .coach-meta span:not(.divider) { }
 .coach-meta .divider {
@@ -567,7 +481,7 @@ section { padding: 72px 0; }
   padding: 20px 4px;
   font-size: 15.5px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -594,7 +508,7 @@ section { padding: 72px 0; }
 
 /* ---------- Forms ---------- */
 .form-card {
-  background: var(--surface);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 36px;
@@ -603,38 +517,6 @@ section { padding: 72px 0; }
   box-shadow: var(--shadow);
 }
 .form-card-wide { max-width: 720px; }
-
-/* ---------- Contact details (no-form contact page) ---------- */
-.contact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 48px 40px;
-  max-width: 480px;
-  margin: 0 auto;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-.contact-row {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
-}
-.contact-row:last-child { border-bottom: none; }
-.contact-label {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.contact-value {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-main);
-}
-.contact-value:hover { color: var(--gold); }
-
 .form-row-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -648,7 +530,7 @@ section { padding: 72px 0; }
   display: block;
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
   margin-bottom: 6px;
 }
 .form-row input,
@@ -667,14 +549,14 @@ section { padding: 72px 0; }
 .form-row textarea:focus {
   outline: none;
   border-color: var(--gold);
-  background: var(--surface);
+  background: #fff;
 }
 .form-row textarea { resize: vertical; min-height: 100px; }
 
 .form-section-title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-dark);
   margin: 30px 0 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -721,7 +603,7 @@ section { padding: 72px 0; }
   display: none;
   background: rgba(228,97,26,0.14);
   border: 1px solid var(--gold);
-  color: var(--gold);
+  color: var(--gold-dark);
   padding: 14px 16px;
   border-radius: 8px;
   font-size: 14px;
@@ -755,7 +637,8 @@ section { padding: 72px 0; }
   gap: 24px;
   margin-bottom: 24px;
 }
-.footer-logo { height: 56px; width: auto; }
+.footer-brand { font-weight: 700; color: #fff; font-size: 16px; margin-bottom: 6px; }
+.footer-tagline { font-size: 13px; color: var(--gold); font-style: italic; }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
 .footer-links a:hover { color: var(--gold); }
 .footer-contact { font-size: 13.5px; line-height: 1.9; }
@@ -777,7 +660,7 @@ section { padding: 72px 0; }
 .page-hero h1 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--charcoal-dark);
 }
 .page-hero p {
   color: var(--text-muted);
