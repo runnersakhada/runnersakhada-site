@@ -102,10 +102,9 @@
       <div class="eyebrow">Behind the coaching</div>
       <h2>Coaching, one athlete at a time</h2>
     </div>
-    <div class="grid grid-2">
-      <img src="https://framerusercontent.com/images/MWQJ2oXomYD1Ax98qj75iZ4owGE.png" alt="Athlete winning a race" style="border-radius:10px;">
-      <img src="https://framerusercontent.com/images/8lKQIagOcEDwIqkeNZQlhcYDmXc.png" alt="Coach explaining something to an athlete" style="border-radius:10px;">
-    </div>
+    <video muted loop playsinline preload="metadata" class="autoplay-on-scroll" style="max-height:75vh;width:auto;max-width:100%;border-radius:12px;display:block;margin:0 auto;">
+      <source src="assets/Trainee.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -134,9 +133,19 @@
       <div class="icon-strava"><a href="https://strava.app.link/IM3KowOZn5b" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/></svg> Swapnesh Kumar</a></div>
     </div>
   </div>
-  <div class="footer-bottom">&copy; 2026 Runner's Akhada by Coach Swapnesh. All rights reserved.</div>
+  <div class="footer-bottom">&copy; 2026 RunnersAkhada by Coach Swapnesh. All rights reserved.</div>
 </footer>
 
 <script src="assets/script.js"></script>
+<script>
+document.querySelectorAll('.autoplay-on-scroll').forEach(function (video) {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { video.play(); } else { video.pause(); }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(video);
+});
+</script>
 </body>
 </html>

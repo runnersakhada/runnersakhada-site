@@ -40,6 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nextBtn) nextBtn.addEventListener('click', function () { scrollByCards(1); });
   });
 
+  // Testimonial "Read more" toggle
+  document.querySelectorAll('.testimonial-card p.quote').forEach(function (quote) {
+    // Use text length as proxy since off-screen carousel cards have 0 clientHeight
+    if (quote.textContent.length > 200) {
+      var btn = document.createElement('button');
+      btn.className = 'read-more';
+      btn.textContent = 'Read more';
+      quote.insertAdjacentElement('afterend', btn);
+      btn.addEventListener('click', function () {
+        var card = quote.closest('.testimonial-card');
+        var isExpanded = card.classList.toggle('expanded');
+        btn.textContent = isExpanded ? 'Read less' : 'Read more';
+      });
+    }
+  });
+
   // Native form handling
   document.querySelectorAll('form[data-native-form]').forEach(function (form) {
     var gsheetUrl = form.getAttribute('data-gsheet-url');

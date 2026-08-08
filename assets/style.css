@@ -244,12 +244,13 @@ ul { list-style: none; }
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  border: none;
+  border: 1.5px solid transparent;
   transition: transform 0.15s ease, background 0.2s;
 }
 
 .btn-primary {
   background: var(--gold);
+  border-color: var(--gold);
   color: #fff;
 }
 .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
@@ -479,7 +480,31 @@ section { padding: 72px 0; }
 }
 .testimonial-card .body { padding: 20px; }
 .testimonial-card h4 { font-size: 15px; color: var(--gold); margin-bottom: 8px; }
-.testimonial-card p.quote { font-size: 14px; color: var(--text-muted); font-style: italic; margin-bottom: 14px; }
+.testimonial-card p.quote {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.testimonial-card.expanded p.quote {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+.testimonial-card .read-more {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 14px;
+}
+.testimonial-card .read-more:hover { text-decoration: underline; }
 .testimonial-card .who { font-size: 13.5px; font-weight: 700; color: var(--text-main); }
 .testimonial-card .role { font-size: 12.5px; color: var(--text-muted); }
 
@@ -798,8 +823,9 @@ section { padding: 72px 0; }
 .footer-logo { height: 56px; width: auto; }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
 .footer-links a:hover { color: var(--gold); }
-.footer-contact { font-size: 13.5px; line-height: 1.9; }
-.footer-contact div,
+.footer-contact { font-size: 13.5px; }
+.footer-contact > div { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.footer-contact > div:last-child { margin-bottom: 0; }
 .footer-contact a { display: inline-flex; align-items: center; gap: 6px; }
 .footer-contact svg { width: 16px; height: 16px; flex-shrink: 0; }
 .footer-contact .icon-email svg { fill: #ea4335; }
