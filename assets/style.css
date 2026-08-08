@@ -189,6 +189,7 @@ ul { list-style: none; }
   max-width: 760px;
   margin: 0 auto;
 }
+.hero-video .hero-inner .btn + .btn { margin-left: 12px; }
 
 .hero {
   position: relative;
@@ -802,7 +803,7 @@ section { padding: 72px 0; }
   text-align: center;
   padding: 60px 24px;
 }
-.cta-band h2 { font-size: 1.8rem; margin-bottom: 10px; }
+.cta-band h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: 10px; white-space: nowrap; }
 .cta-band p { color: #d8d6ce; margin-bottom: 26px; }
 
 /* ---------- Footer ---------- */
@@ -858,4 +859,21 @@ section { padding: 72px 0; }
   max-width: 520px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ---------- Mobile fixes ---------- */
+@media (max-width: 620px) {
+  .hero-video .hero-inner .btn {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 12px !important;
+    text-align: center;
+  }
+  .coach-meta .divider { display: none; }
+  .coach-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }

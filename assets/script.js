@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!card) return;
       var cardWidth = card.getBoundingClientRect().width;
       var gap = 24;
-      track.scrollBy({ left: direction * (cardWidth + gap) * 3, behavior: 'smooth' });
+      var visibleCards = Math.round(track.clientWidth / (cardWidth + gap)) || 1;
+      track.scrollBy({ left: direction * (cardWidth + gap) * visibleCards, behavior: 'smooth' });
     }
 
     if (prevBtn) prevBtn.addEventListener('click', function () { scrollByCards(-1); });
